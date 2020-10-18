@@ -36,7 +36,6 @@ function PaymentScreen(props) {
                 <label for="paymentMethod">Paypal</label>
               </div>
             </li>
-
             <li>
               <button type="submit" className="button primary">
                 Continue

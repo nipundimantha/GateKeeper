@@ -59,7 +59,7 @@ function PlaceOrderScreen(props) {
           <ul className="cart-list-container">
             <li>
               <h3>
-                Shopping Cart
+                Order Process
           </h3>
               <div>
                 Price

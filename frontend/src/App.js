@@ -37,7 +37,7 @@ function App() {
             <Link to="/">GATE-KEEPER</Link>
           </div>
           <div className="header-links">
-          <Link to="/cart/:id?">Cart</Link>
+          <Link to="/cart/:id?">Orders</Link>
           <Link to="/join">Inquiries</Link>
             {userInfo ? (
               <Link to="/profile">{userInfo.name}</Link>

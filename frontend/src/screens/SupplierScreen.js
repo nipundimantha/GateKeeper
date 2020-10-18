@@ -109,7 +109,7 @@ function SupplierScreen(props) {
                       onClick={handleAddToCart}
                       className="button primary"
                     >
-                      Add to Cart
+                      Add to Order
                     </button>
                   )}
                 </li>

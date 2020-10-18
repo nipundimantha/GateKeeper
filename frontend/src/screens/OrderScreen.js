@@ -55,7 +55,7 @@ function OrderScreen(props) {
             <ul className="cart-list-container">
               <li>
                 <h3>
-                  Shopping Cart
+                  Order process
           </h3>
                 <div>
                   Price
@@ -84,7 +84,7 @@ function OrderScreen(props) {
                         </div>
                       </div>
                       <div className="cart-price">
-                        ${item.price}
+                        LKR {item.price}
                       </div>
                     </li>
                   )
