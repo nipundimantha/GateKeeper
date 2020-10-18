@@ -3,6 +3,16 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { listOrders, deleteOrder } from '../actions/orderActions';
 
+/**
+ * List of quotations for the suppliers
+ * 
+ * 
+ * @author 2020-JUN-WE-05
+ * @version 1.0
+ * @param {*} props 
+ * 
+ */
+
 function OrdersScreen(props) {
   const orderList = useSelector(state => state.orderList);
   const { loading, orders, error } = orderList;
@@ -55,7 +65,7 @@ function OrdersScreen(props) {
               <td>{order.isDelivered.toString()}</td>
               <td>{order.deliveredAt}</td>
               <td>
-                <Link to={"/order/" + order._id} className="button secondary" >Details</Link>
+                <Link to={"/order/" + order._id} className="button secondary detail_btn" >Details</Link>
                 {' '}
                 <button type="button" onClick={() => deleteHandler(order)} className="button secondary">Delete</button>
               </td>

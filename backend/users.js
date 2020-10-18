@@ -1,5 +1,7 @@
 const users = [];
 
+//addinig supplier to room and proper joing chat
+
 const addUser = ({ id, name, room }) => {
   name = name.trim().toLowerCase();
   room = room.trim().toLowerCase();

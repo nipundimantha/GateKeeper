@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from "react";
 import queryString from 'query-string';
 import io from "socket.io-client";
-
 import TextContainer from '../TextContainer/TextContainer';
 import Messages from '../Messages/Messages';
 import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
-
 import './Chat.css';
+
+/**
+   * Inquery chat screen
+   * 
+   * 
+   * @author 2020-JUN-WE-05
+   * @version 1.0
+   * @param {*} props 
+   * 
+*/
 
 const ENDPOINT = 'https://project-chat-application.herokuapp.com/';
 

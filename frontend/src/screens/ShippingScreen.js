@@ -4,6 +4,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { saveShipping } from '../actions/cartActions';
 import CheckoutSteps from '../components/CheckoutSteps';
 
+/**
+   * Shipping details insertion screen for the payment process.
+   * 
+   * 
+   * @author 2020-JUN-WE-05
+   * @version 1.0
+   * @param {*} props 
+   * 
+*/
+
 function ShippingScreen(props) {
 
   const [address, setAddress] = useState('');
@@ -65,6 +75,5 @@ function ShippingScreen(props) {
       </form>
     </div>
   </div>
-
 }
 export default ShippingScreen;

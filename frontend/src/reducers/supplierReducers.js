@@ -16,6 +16,12 @@ import {
     SUPPLIER_REVIEW_SAVE_FAIL,
     SUPPLIER_REVIEW_SAVE_RESET,
   } from '../constants/supplierConstants';
+
+  /**
+   * 
+   * @param {*} state 
+   * @param {*} action 
+   */
   
   function supplierListReducer(state = { suppliers: [] }, action) {
     switch (action.type) {

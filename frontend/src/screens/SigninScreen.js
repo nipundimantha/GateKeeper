@@ -3,6 +3,16 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { signin } from '../actions/userActions';
 
+/**
+   * User sign in screen.
+   * 
+   * 
+   * @author 2020-JUN-WE-05
+   * @version 1.0
+   * @param {*} props 
+   * 
+*/
+
 function SigninScreen(props) {
 
   const [email, setEmail] = useState('');

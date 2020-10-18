@@ -3,6 +3,16 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { register } from '../actions/userActions';
 
+/**
+ * New user registration sign in screen
+ * 
+ * 
+ * @author 2020-JUN-WE-05
+ * @version 1.0
+ * @param {*} props 
+ * 
+ */
+
 function RegisterScreen(props) {
 
   const [name, setName] = useState('');

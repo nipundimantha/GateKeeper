@@ -10,7 +10,7 @@ import {
 
 /**
  * 
- * 
+ * List of already added suppliers screen.
  * 
  * @author 2020-JUN-WE-05
  * @version 1.0
@@ -25,9 +25,6 @@ import {
   const [email, setEmail] = useState('');
   const [image, setImage] = useState('');
   const [location, setLocation] = useState('');
-  // const [category, setCategory] = useState('');
-  // const [countInStock, setCountInStock] = useState('');
-  // const [description, setDescription] = useState('');
   const [uploading, setUploading] = useState(false);
   const supplierList = useSelector((state) => state.supplierList);
   const { loading, suppliers, error } = supplierList;
@@ -53,7 +50,6 @@ import {
     }
     dispatch(listSuppliers());
     return () => {
-      //
     };
   }, [successSave, successDelete]);
 
@@ -64,9 +60,6 @@ import {
     setEmail(supplier.email);
     setLocation(supplier.location);
     setImage(supplier.image);
-    // setBrand(supplier.brand);
-    // setCategory(supplier.category);
-    // setCountInStock(supplier.countInStock);
   };
   const submitHandler = (e) => {
      let name_input = document.getElementById("name").value
@@ -86,9 +79,6 @@ import {
             email,
             image,
             location,
-            // category,
-            // countInStock,
-            // description,
           })
         )) {
           swal({
@@ -115,7 +105,7 @@ import {
         dispatch(deleteSupplier(supplier._id));
         swal("Poof! Your imaginary supplier has been deleted!", {
           icon: "success",
-        });
+        }); 
       } else {
         swal("Your imaginary supplier is safe!");
       }
@@ -145,7 +135,7 @@ import {
     <div className="content content-margined">
       <div className="supplier-header">
         <h3>Suppliers</h3>
-        <button className="button primary" onClick={() => openModal({})}>
+        <button className="supplier_btn" onClick={() => openModal({})}>
           Create Supplier
         </button>
       </div>
@@ -203,35 +193,6 @@ import {
                   onChange={(e) => setLocation(e.target.value)}
                   ></input>
               </li>
-              {/* <li>
-                <label htmlFor="countInStock">CountInStock</label>
-                <input
-                  type="text"
-                  name="countInStock"
-                  value={countInStock}
-                  id="countInStock"
-                  onChange={(e) => setCountInStock(e.target.value)}
-                ></input>
-              </li>
-              <li>
-                <label htmlFor="name">Category</label>
-                <input
-                  type="text"
-                  name="category"
-                  value={category}
-                  id="category"
-                  onChange={(e) => setCategory(e.target.value)}
-                ></input>
-              </li>
-              <li>
-                <label htmlFor="description">Description</label>
-                <textarea
-                  name="description"
-                  value={description}
-                  id="description"
-                  onChange={(e) => setDescription(e.target.value)}
-                ></textarea>
-              </li> */}
               <li>
                 <button type="submit" className="button primary">
                   {id ? 'Update' : 'Create'}
@@ -248,9 +209,10 @@ import {
               </li>
             </ul>
           </form>
+          
         </div>
       )}
-
+      
       <div className="supplier-list">
         <table className="table">
           <thead>
@@ -259,7 +221,6 @@ import {
               <th>Name</th>
               <th>Email</th>
               <th>Location</th>
-              {/* <th>Brand</th> */}
               <th>Action</th>
             </tr>
           </thead>
@@ -270,7 +231,6 @@ import {
                 <td>{supplier.name}</td>
                 <td>{supplier.email}</td>
                 <td>{supplier.location}</td>
-                {/* <td>{supplier.brand}</td> */}
                 <td>
                   <button className="button secondary" onClick={() => openModal(supplier)}>
                     Edit
@@ -289,5 +249,6 @@ import {
       </div>
     </div>
   );
+
 }
 export default SuppliersScreen;
