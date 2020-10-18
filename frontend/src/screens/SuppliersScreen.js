@@ -8,7 +8,17 @@ import {
   deleteSupplier,
 } from '../actions/supplierActions';
 
-function SuppliersScreen(props) {
+/**
+ * 
+ * 
+ * 
+ * @author 2020-JUN-WE-05
+ * @version 1.0
+ * @param {*} props 
+ * 
+ */
+
+ function SuppliersScreen(props) {
   const [modalVisible, setModalVisible] = useState(false);
   const [id, setId] = useState('');
   const [name, setName] = useState('');
@@ -262,7 +272,7 @@ function SuppliersScreen(props) {
                 <td>{supplier.location}</td>
                 {/* <td>{supplier.brand}</td> */}
                 <td>
-                  <button className="button" onClick={() => openModal(supplier)}>
+                  <button className="button secondary" onClick={() => openModal(supplier)}>
                     Edit
                   </button>{' '}
                   <button
