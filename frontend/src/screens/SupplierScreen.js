@@ -2,27 +2,29 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { detailsSupplier, saveSupplierReview } from '../actions/supplierActions';
-// import Rating from '../components/Rating';
-// import { SUPPLIER_REVIEW_SAVE_RESET } from '../constants/supplierConstants';
+
+/**
+   * New supplier insertion screen
+   * 
+   * 
+   * @author 2020-JUN-WE-05
+   * @version 1.0
+   * @param {*} props 
+   * 
+*/
 
 function SupplierScreen(props) {
   const [qty, setQty] = useState(1);
-  // const [rating, setRating] = useState(0);
-  // const [comment, setComment] = useState('');
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
   const supplierDetails = useSelector((state) => state.supplierDetails);
   const { supplier, loading, error } = supplierDetails;
-  // const supplierReviewSave = useSelector((state) => state.supplierReviewSave);
   const { success: supplierSaveSuccess } = supplierReviewSave;
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (supplierSaveSuccess) {
       alert('Review submitted successfully.');
-      // setRating(0);
-      // setComment('');
-      // dispatch({ type: SUPPLIER_REVIEW_SAVE_RESET });
     }
     dispatch(detailsSupplier(props.match.params.id));
     return () => {
@@ -31,14 +33,6 @@ function SupplierScreen(props) {
   }, [supplierSaveSuccess]);
   const submitHandler = (e) => {
     e.preventDefault();
-    // dispatch actions
-    // dispatch(
-    //   saveSupplierReview(props.match.params.id, {
-    //     name: userInfo.name,
-    //     rating: rating,
-    //     comment: comment,
-    //   })
-    // );
   };
   const handleAddToCart = () => {
     props.history.push('/cart/' + props.match.params.id + '?qty=' + qty);
@@ -64,14 +58,6 @@ function SupplierScreen(props) {
                 <li>
                   <h4>{supplier.name}</h4>
                 </li>
-                {/* <li>
-                  <a href="#reviews">
-                    <Rating
-                      value={supplier.rating}
-                      text={supplier.numReviews + ' reviews'}
-                    />
-                  </a>
-                </li> */}
                 <li>
                   Email: <b>${supplier.email}</b>
                 </li>
@@ -117,57 +103,15 @@ function SupplierScreen(props) {
             </div>
           </div>
           <div className="content-margined">
-            {/* <h2>Reviews</h2> */}
-            {/* {!supplier.reviews.length && <div>There is no review</div>} */}
             <ul className="review" id="reviews">
-              {/* {supplier.reviews.map((review) => (
-                <li key={review._id}>
-                  <div>{review.name}</div>
-                  <div>
-                    <Rating value={review.rating}></Rating>
-                  </div>
-                  <div>{review.createdAt.substring(0, 10)}</div>
-                  <div>{review.comment}</div>
-                </li>
-              ))} */}
               <li>
-                {/* <h3>Write a customer review</h3> */}
                 {userInfo ? (
                   <form onSubmit={submitHandler}>
                     <ul className="form-container">
-                      {/* <li>
-                        <label htmlFor="rating">Rating</label>
-                        <select
-                          name="rating"
-                          id="rating"
-                          value={rating}
-                          onChange={(e) => setRating(e.target.value)}
-                        >
-                          <option value="1">1- Poor</option>
-                          <option value="2">2- Fair</option>
-                          <option value="3">3- Good</option>
-                          <option value="4">4- Very Good</option>
-                          <option value="5">5- Excelent</option>
-                        </select>
-                      </li> */}
-                      {/* <li>
-                        <label htmlFor="comment">Comment</label>
-                        <textarea
-                          name="comment"
-                          value={comment}
-                          onChange={(e) => setComment(e.target.value)}
-                        ></textarea>
-                      </li> */}
-                      {/* <li>
-                        <button type="submit" className="button primary">
-                          Submit
-                        </button>
-                      </li> */}
                     </ul>
                   </form>
                 ) : (
                   <div>
-                    {/* Please <Link to="/signin">Sign-in</Link> to write a review. */}
                   </div>
                 )}
               </li>

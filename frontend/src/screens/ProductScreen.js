@@ -5,6 +5,16 @@ import { detailsProduct, saveProductReview } from '../actions/productActions';
 import Rating from '../components/Rating';
 import { PRODUCT_REVIEW_SAVE_RESET } from '../constants/productConstants';
 
+/**
+ * New orders insertion screen
+ * 
+ * 
+ * @author 2020-JUN-WE-05
+ * @version 1.0
+ * @param {*} props 
+ * 
+ */
+
 function ProductScreen(props) {
   const [qty, setQty] = useState(1);
   const [rating, setRating] = useState(0);
@@ -26,12 +36,10 @@ function ProductScreen(props) {
     }
     dispatch(detailsProduct(props.match.params.id));
     return () => {
-      //
     };
   }, [productSaveSuccess]);
   const submitHandler = (e) => {
     e.preventDefault();
-    // dispatch actions
     dispatch(
       saveProductReview(props.match.params.id, {
         name: userInfo.name,

@@ -4,6 +4,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { savePayment } from '../actions/cartActions';
 import CheckoutSteps from '../components/CheckoutSteps';
 
+/**
+ * Interface for payment gateway
+ * 
+ * 
+ * @author 2020-JUN-WE-05
+ * @version 1.0
+ * @param {*} props 
+ * 
+ */
+
 function PaymentScreen(props) {
   const [paymentMethod, setPaymentMethod] = useState('');
 

@@ -77,12 +77,8 @@ a:hover {
   list-style-type: none;
   padding: 9;
   flex: 0 1 34rem;
-  /* margin-top: 6rem;
-  margin-left: 1rem;
-  margin-right: 1rem; */
   margin-bottom: 25rem; 
   height: 20rem;
-  /* border-bottom: 0.1rem #ffb901 solid; */
 }
 .product {
   display: flex;
@@ -482,4 +478,30 @@ tbody > tr:nth-child(odd) {
 }
 .sidebar.h3{
   background-color: #dddddd;
+}
+.supplier_btn {
+  background-color: #f0c040;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.product_btn {
+  background-color: #f0c040;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 1000px;
+}
+
+.detail_btn {
+  text-align: center;
 }

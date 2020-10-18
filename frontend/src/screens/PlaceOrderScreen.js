@@ -3,6 +3,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CheckoutSteps from '../components/CheckoutSteps';
 import { createOrder } from '../actions/orderActions';
+
+/**
+ * Interface for place a delivery
+ * 
+ * 
+ * @author 2020-JUN-WE-05
+ * @version 1.0
+ * @param {*} props 
+ * 
+ */
+
 function PlaceOrderScreen(props) {
 
   const cart = useSelector(state => state.cart);
@@ -94,7 +105,6 @@ function PlaceOrderScreen(props) {
             }
           </ul>
         </div>
-
       
       </div>
       <div className="placeorder-action">
@@ -122,11 +132,7 @@ function PlaceOrderScreen(props) {
             <div>LKR {totalPrice}</div>
           </li>
         </ul>
-
-
-
       </div>
-
     </div>
   </div>
 

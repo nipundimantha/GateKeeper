@@ -4,6 +4,16 @@ import { logout, update } from '../actions/userActions';
 import { listMyOrders } from '../actions/orderActions';
 import { useDispatch, useSelector } from 'react-redux';
 
+/**
+ * Interface for user profile details handling
+ * 
+ * 
+ * @author 2020-JUN-WE-05
+ * @version 1.0
+ * @param {*} props 
+ * 
+ */
+
 function ProfileScreen(props) {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
@@ -111,6 +121,15 @@ function ProfileScreen(props) {
       }
     </div>
   </div>
+  /**
+   * User profile form and view of already added user profiles.
+   * 
+   * 
+   * @author 2020-JUN-WE-05
+   * @version 1.0
+   * @param {*} props 
+   * 
+   */
 }
 
 export default ProfileScreen;

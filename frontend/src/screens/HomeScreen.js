@@ -5,6 +5,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { listProducts } from '../actions/productActions';
 import Rating from '../components/Rating';
 
+/**
+ * Dashboard Interface
+ * 
+ * 
+ * @author 2020-JUN-WE-05
+ * @version 1.0
+ * @param {*} props 
+ * 
+ */
+
 function HomeScreen(props) {
   const [searchKeyword, setSearchKeyword] = useState('');
   const [sortOrder, setSortOrder] = useState('');
@@ -16,7 +26,7 @@ function HomeScreen(props) {
     dispatch(listProducts(category));
 
     return () => {
-      //
+      
     };
   }, [category]);
 

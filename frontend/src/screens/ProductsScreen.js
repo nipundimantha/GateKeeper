@@ -1,11 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
+import swal from 'sweetalert';
 import {
   saveProduct,
   listProducts,
   deleteProdcut,
 } from '../actions/productActions';
+
+/**
+ * List of already added orders screen
+ * 
+ * 
+ * @author 2020-JUN-WE-05
+ * @version 1.0
+ * @param {*} props 
+ * 
+ */
 
 function ProductsScreen(props) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -73,7 +84,24 @@ function ProductsScreen(props) {
     );
   };
   const deleteHandler = (product) => {
-    dispatch(deleteProdcut(product._id));
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this imaginary quatation!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        dispatch(deleteProdcut(product._id));
+        swal("Poof! Your imaginary quatation has been deleted!", {
+          icon: "success",
+        });
+      } else {
+        swal("Your imaginary quatation is safe!");
+      }
+    });
+   
   };
   const uploadFileHandler = (e) => {
     const file = e.target.files[0];
@@ -99,7 +127,7 @@ function ProductsScreen(props) {
     <div className="content content-margined">
       <div className="product-header">
         <h3>Products</h3>
-        <button className="button primary" onClick={() => openModal({})}>
+        <button className="product_btn" onClick={() => openModal({})}>
           Create Product
         </button>
       </div>
@@ -226,7 +254,7 @@ function ProductsScreen(props) {
                 <td>{product.category}</td>
                 <td>{product.brand}</td>
                 <td>
-                  <button className="button" onClick={() => openModal(product)}>
+                  <button className="button secondary" onClick={() => openModal(product)}>
                     Edit
                   </button>{' '}
                   <button
